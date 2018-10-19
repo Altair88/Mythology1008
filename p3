@@ -1,0 +1,30 @@
+import java.awt.*;
+public class p3
+{
+    static Frame frm=new Frame("TextArea class");
+    static TextArea txa1,txa2,txa3;
+
+    public p3(){
+        init();
+    }
+
+    private void init(){
+
+    }
+
+    public static void main(String args[])
+    {
+        txa1=new TextArea("demo",8,14,TextArea.SCROLLBARS_VERTICAL_ONLY);//上下拉動，8行14字
+        txa2=new TextArea("demo",8,14,TextArea.SCROLLBARS_HORIZONTAL_ONLY);
+        txa3=new TextArea("demo",8,14,TextArea.SCROLLBARS_BOTH);
+        frm.setLayout(null);             // 不使用版面配置
+        txa1.setBounds(30,30,140,80);    // 設定文字區的大小
+        txa2.setBounds(30,150,140,80);
+        txa3.setBounds(30,270,140,80);
+        frm.setSize(200,150);
+        frm.add(txa1);
+        frm.add(txa2);
+        frm.add(txa3);
+        frm.setVisible(true);
+    }
+}
