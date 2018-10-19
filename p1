@@ -1,0 +1,46 @@
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class p1 extends Frame implements ActionListener
+{
+
+    static p1 frm=new p1();
+
+    static Button [][] btn_Array= new Button[10][10];
+
+    public static void main(String args[])
+    {
+        GridLayout grid=new GridLayout(10,10); 
+        frm.setLayout(grid);
+        frm.setSize(400,550);
+
+        for(int i=0;i<10;i++){
+            for(int j=0;j<10;j++){
+
+                btn_Array[i][j] = new Button(Integer.toString(i)+"-" +Integer.toString(j));
+                frm.add(btn_Array[i][j]);
+            }
+        } 
+
+        for(int i=0;i<10;i++){
+            for(int j=0;j<10;j++){
+                btn_Array[i][j].addActionListener(frm); 
+            } 
+        } 
+
+        frm.setVisible(true);
+    } 
+    public void actionPerformed(ActionEvent e)
+    {
+        Button btn=(Button) e.getSource(); 
+
+        for(int i=0;i<10;i++){
+            for(int j=0;j<10;j++){
+                if(btn==btn_Array[i][j]){
+                    btn_Array[i][j].setBackground(Color.red);
+                }
+            } 
+        }
+    }
+}
