@@ -1,0 +1,33 @@
+import java.awt.*;
+import java.awt.event.*;
+public class p5 extends Frame implements ItemListener
+{
+    static p5 frm=new p5();
+    static Checkbox ckb1=new Checkbox("chris");
+    static Checkbox ckb2=new Checkbox("chris01");
+    static Label lab=new Label("chris02");
+
+    public static void main(String args[])
+    {
+        CheckboxGroup grp=new CheckboxGroup();
+        frm.setSize(200,150);
+        frm.setTitle("Item Event");
+        frm.setLayout(new FlowLayout(FlowLayout.LEFT));
+        ckb1.setCheckboxGroup(grp); 
+        ckb2.setCheckboxGroup(grp);
+        lab.setBackground(Color.orange);
+        ckb1.addItemListener(frm);       
+        ckb2.addItemListener(frm);      
+        frm.add(lab);
+        frm.add(ckb1);
+        frm.add(ckb2);
+        frm.setVisible(true);
+    }
+    public void itemStateChanged(ItemEvent e)
+    {
+        if(ckb1.getState()==true)      
+            lab.setText("chris");
+        else if(ckb2.getState()==true)  
+            lab.setText("chris01");
+    }
+}
