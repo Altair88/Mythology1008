@@ -1,0 +1,37 @@
+import java.awt.*;
+public class p2
+{
+    static Frame frm=new Frame("TextField class");
+    static TextField txf1=new TextField("TextField Demo");
+    static TextField txf2=new TextField("Editable");
+    static TextField txf3=new TextField("password");
+    static TextField txf4=new TextField("password");
+    static TextField txf5=new TextField("password");
+
+    public static void main(String args[])
+    {
+        frm.setSize(200,150);
+        frm.setLayout(null);
+        frm.setBackground(Color.yellow);
+        txf1.setBounds(20, 40,120,20);
+        txf2.setBounds(20, 70,120,20);
+        txf3.setBounds(20,100,120,20);
+        txf4.setBounds(20,130,120,20);
+        txf5.setBounds(20,160,120,20);
+        txf1.setEditable(false);
+        txf4.setEditable(true);
+        txf5.setEditable(false);// 設定txf1為不可編輯
+        txf3.setEchoChar('*');  // 設定txf3的回應字元為'*'
+        frm.add(txf1);
+        frm.add(txf2);
+        frm.add(txf3);
+        frm.add(txf4);
+        frm.add(txf5);
+        System.out.println(txf1.getText());
+        System.out.println(txf2.getText());
+        System.out.println(txf3.getText());
+        System.out.println(txf4.getText());
+        System.out.println(txf5.getText());
+        frm.setVisible(true);
+    }
+}
